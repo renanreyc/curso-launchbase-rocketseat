@@ -151,7 +151,13 @@ footer {
     margin: 5vh auto;
     position: relative;
 }
-
+.modal .maximize-modal {
+    color: black;
+    position: absolute;
+    right: 36px;
+    top: 8px;
+    cursor: pointer;
+}
 .modal .close-modal {
     color: black;
     position: absolute;
@@ -173,6 +179,11 @@ iframe {
     top: 5%;
 }
 
+/*=== MAXIMIZE.ACTIVE ===*/
 
-
-
+.modal.maximize{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -5%;
+}
