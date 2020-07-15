@@ -1,21 +1,20 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>Sobre - Easy Ambiental</title>
+    <title>Sobre - {{ about.name }}</title>
 {% endblock %}
 
 
 {% block content %}
     <div id="wrapper">
-        <img src="https://images.unsplash.com/flagged/photo-1576045771676-7ac070c1ce72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Easy Ambiental">
-        <h1>Easy Ambiental</h1>
-        <h2>Somos uma empresa especializada em solucionar Problemas Ambientais e tornar seu negócio sustentável de acordo com as <a href="https://www.ejeq.com.br/legislacao-ambiental/" target="_blanck">Normas Ambientais</a> atuais.</h2>
-        <h3>Áreas de atuação:</h3>
+        <img src="{{ about.avatar_url }}" alt="Imagem de {{ about.name }}">
+        <h1>{{ about.name }}</h1>
+        <h2>{{ about.description }}</h2>
+        <h3>{{ about.role }}</h3>
         <ul>
-            <li>Licenciamento Ambiental</li>
-            <li>Auditorias e Diagnósticos Ambientais</li>
-            <li>Plano de Gerenciamento Ambiental</li>
-            <li>Análises de Qualidade de Água e de Ar</li>
+            {% for area in about.areas %}
+            <li>{{ area.area }}</li>
+            {% endfor %}
         </ul>
 {% endblock %}
 

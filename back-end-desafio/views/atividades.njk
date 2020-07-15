@@ -16,50 +16,22 @@
 
         <section class="cards">
 
-            <div class="card" id="starter">
+            {% for item in items %}
+            <div class="card" id="{{item.id}}">
 
                 <div class="card__image-container">
-                    <img src="https://image.flaticon.com/icons/svg/1728/1728431.svg" alt="Licenciamento Ambiental">
+                    <img src="{{item.image}}" alt="Imagem de {{item.title}}">
                 </div>
                 <div class="card__content">
-                    <p>Licencie a localização, instalação, ampliação ou a operação de sua atividade. Diminua os danos ambientais do seu empreendimento. </p>
+                    <p>{{item.title}}</p>
                 </div>
                 <div class="card__info">
-                    <p>Licenciamento Ambiental</p>
-                    <p class="card__price">R$800 à R$2000</p>
+                    <p>{{item.info}}</p>
+                    <p class="card__price">{{item.price}}</p>
                 </div>
 
             </div>
-
-            <div class="card" id="launchbase">
-
-                <div class="card__image-container">
-                    <img src="https://image.flaticon.com/icons/svg/3125/3125725.svg" alt="Gestão Ambiental">
-                </div>
-                <div class="card__content">
-                    <p>Sua organização em dia com a ISO 14001. Desenvolva uma estrutura para a proteção do Meio Ambiente e rápida resposta às mudanças das condições ambientais.</p>
-                </div>
-                <div class="card__info">
-                    <p>Gestão Ambiental</p>
-                    <p class="card__price">R$1000 à R$2000</p>
-                </div>
-
-            </div>
-
-            <div class="card" id="gostack">
-
-                <div class="card__image-container">
-                    <img src="https://image.flaticon.com/icons/svg/861/861086.svg" alt="Licenciamento Ambiental">
-                </div>
-                <div class="card__content">
-                    <p>Construa os valores sociais, conhecimentos, habilidades e atitudes voltadas para a conservação do meio ambiente da sua organização.</p>
-                </div>
-                <div class="card__info">
-                    <p>Educação Ambiental</p>
-                    <p class="card__price">Free</p>
-                </div>
-
-            </div>
+            {% endfor %}
 
         </section>
 

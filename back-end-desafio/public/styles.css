@@ -109,6 +109,7 @@ footer {
 .card {
     background-color: rgba(0, 0, 0, 0.5);
     color: whitesmoke;
+    display: grid;
 }
 
 .card__image-container img {
