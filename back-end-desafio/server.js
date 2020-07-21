@@ -11,7 +11,8 @@ server.set("view engine", "njk")
 
 nunjucks.configure("views", { //views é a pasta
     express:server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 })
 //---------------------------------------------
 
@@ -36,6 +37,18 @@ server.get("/", function(req, res) {
 server.get("/atividades", function(req, res) {
     return res.render("atividades", {items: cartoes}) 
 })
+
+server.get("/courses/:id", function(req, res) {
+  const id = req.params.id;
+
+  const course = cartoes.find(cartao => cartao.id === id);
+
+  if (!course) {
+      return res.status(404).render("Course not-found")
+  }
+
+  return res.render("course", { item: course });
+});
 
 server.use(function(req, res) {
     res.status(404).render("not-found");

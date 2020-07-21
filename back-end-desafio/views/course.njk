@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{item.info}} | Easy Ambiental</title>
+{% endblock %}
+
+
+{% block content %}
+
+        <div id="wrapper" class="course">
+            <h1>{{item.info}}</h1>
+        </div>
+
+        <section class="">
+
+
+            <div class="card course" id="{{item.id}}">
+
+                <div class="card__course-container">
+                    <iframe src="https://rocketseat.com.br/{{item.id}}" frameborder="0"></iframe>
+                </div>
+
+
+
+        </section>
+
+{% endblock %}

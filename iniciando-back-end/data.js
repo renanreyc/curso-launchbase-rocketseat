@@ -3,7 +3,8 @@ module.exports = [
         id: "Xzbj3r3h7ps",
         title: "Primeiro Formulário Animado com JS puro e CSS Animation | Renan Rey",
         duration: "17 min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     { 
         id: "3RLZBfA2ixs",
@@ -15,7 +16,8 @@ module.exports = [
         id: "h9bIjOfONAM",
         title: "Terceiro Formulário Animado com JS puro e CSS Animation | Renan Rey",
         duration: "37 min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     { 
         id: "Xzbj3r3h7ps",
@@ -33,6 +35,7 @@ module.exports = [
         id: "h9bIjOfONAM",
         title: "Sexto Formulário Animado com JS puro e CSS Animation | Renan Rey",
         duration: "67 min",
-        price: "Free"
+        price: "Free",
+        featured: true
     }
 ]
