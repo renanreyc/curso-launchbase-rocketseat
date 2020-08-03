@@ -2,7 +2,9 @@
 
 :root {
     --primary-color: #7A8DAB;
+    --segundary-color: #1E3853;
     --white-color: #FAF5D8;
+
 }
 
 * {
@@ -17,7 +19,7 @@ body {
 }
 
 header {
-    background-color: #1E3853;
+    background-color: var(--segundary-color);
     width: 100%;
     padding: 16px;
     text-align: center;
@@ -60,15 +62,17 @@ header {
 }
 
 footer {
-    background-color: #1E3853;
+    background-color: var(--segundary-color);
     width: 100%;
     padding: 8px;
     text-align: center;
     box-sizing: border-box;
 
-    position:absolute;
-    bottom:0;
     width:100%;
+}
+
+footer .links{
+    font-size: 18px;
 }
 
 /* === CARD ==*/
@@ -84,6 +88,7 @@ footer {
     grid-template-columns: 40% 60%;
 
     border: 20px solid #2A1510;
+    border-right: inherit;
 
     box-shadow: 8px 8px 32px -2px rgba(0,0,0, 0.8);
 
@@ -156,4 +161,56 @@ footer {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+/* FORM */
+
+input {
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    padding: 4px 16px;
+
+    color: var(--white-color);
+    color: var(--segundary-color);
+    font-weight: bold;
+    font-size: 18px;
+
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+
+input::placeholder{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    padding: 8px 32px;
+    background-color: var(--segundary-color);
+    border-radius: 4px;
+    margin-top: 16px;
+    width: 100%;
+    color: var(--white-color);
+    font-size: 16px;
+
+}
+
+select {
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    padding: 4px 16px;
+
+    color: var(--white-color);
+    color: var(--segundary-color);
+    font-weight: bold;
+    font-size: 18px;
+
+
 }

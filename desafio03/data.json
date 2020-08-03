@@ -1,0 +1,14 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "http://google.com",
+      "name": "Renan Rey ",
+      "birth": 836438400000,
+      "level": "superior",
+      "type": "face-to-face",
+      "subjects": "inglês, português, programação",
+      "created_at": 1596418453145
+    }
+  ]
+}
