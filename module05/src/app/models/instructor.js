@@ -1,6 +1,7 @@
 const res = require('express/lib/response')
 const db = require('../../config/db')
 const { age, date } = require('../../lib/utils')
+const instructors = require('../controllers/instructors')
 
 module.exports = {
     all(callback) {
@@ -64,7 +65,6 @@ module.exports = {
             callback(results.rows)
         })
     },
-
     update(data, callback) {
         const query = `
          UPDATE instructors SET
@@ -96,5 +96,40 @@ module.exports = {
 
             return callback()
         })
+    },
+    
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(SELECT count(*) FROM instructors)`
+
+        if (filter) {
+            filterQuery = `${query}
+            WHERE instructors.name ILIKE '%${filter}%'
+            OR instructors.services ILIKE '%${filter}%'`
+
+            totalQuery = `(SELECT count(*) FROM instructors
+                ${filterQuery}
+                )`
+        }
+
+        query = `
+        SELECT instructors.*,
+        ${totalQuery} AS total, 
+        count(members) AS total_students
+        FROM instructors
+        LEFT JOIN members ON (instructors.id = members.instructor_id)
+        ${filterQuery}
+        GROUP BY instructors.id LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function (err, results) {
+            if (err) throw 'Database Error!'
+
+            callback(results.rows)
+        })
+
     }
 }
