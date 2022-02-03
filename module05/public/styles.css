@@ -129,7 +129,7 @@ h3,
     color: var(--primary-color);
 }
 
-.details .item div:nth-child(2) span {
+.details .item span {
     padding: 8px 16px;
     background-color: var(--secondary-color);
     border-radius: 16px;
